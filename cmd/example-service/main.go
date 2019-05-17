@@ -1,10 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"github.com/dhiguero/go-template/cmd/example-service/commands"
+)
 
 // Version of the command
 var Version string
 
+// Commit from which the command was built
+var Commit string
+
 func main() {
-	fmt.Printf("example-service on version %s\n", Version)
+	commands.Execute(Version, Commit)
 }
