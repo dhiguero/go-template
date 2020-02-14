@@ -48,7 +48,7 @@ docker: $(addsuffix .docker, $(BUILD_TARGETS))
 		echo "Building docker image for "$(basename $@);\
 		rm -r bin/docker || true;\
 		mkdir -p bin/docker;\
-		cp docker/$(basename $@)/Dockerfile bin/docker/.;\
+		cp docker/$(basename $@)/* bin/docker/.;\
 		cp bin/linux/$(basename $@) bin/docker/.;\
 		docker build bin/docker -t $(TARGET_DOCKER_REGISTRY)/$(basename $@):$(VERSION);\
 	fi
