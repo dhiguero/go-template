@@ -1,8 +1,8 @@
-# Base docker image is from iron/go Uber collection of minimal images
-FROM iron/go
+FROM alpine:3.9.4
 
 WORKDIR /app
 
+COPY example.conf .
 COPY example-service .
 
 ENTRYPOINT ["./example-service"]
